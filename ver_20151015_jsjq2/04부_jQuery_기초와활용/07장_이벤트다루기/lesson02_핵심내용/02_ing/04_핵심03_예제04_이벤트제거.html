@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title></title>
+        <style>
+            body {
+                font-size: 9pt;
+            }
+
+        </style>
+
+        <script src="../../libs/jquery-1.11.0.min.js"></script>
+
+        <script>
+            /*
+             예제04:
+             이벤트제거 버튼(#btnOff)을 누르면 더 이상 이벤트 리스너가 동작하지
+             않게 확인 버튼(#btn)에 등록한 이벤트를 제거해주세요.
+
+             */
+            $(document).ready(function() {
+                // #btn에 클릭 이벤트 추가
+                $("#btn").on("click", function() {
+                    // 환영합니다. 메시지 출력
+                    alert("환영합니다.")
+                })
+
+                // #btnOff에 클릭 이벤트 추가
+
+            })
+
+        </script>
+
+    </head>
+
+    <body>
+        <button id="btn">
+            확인
+        </button>
+        <button id="btnOff">
+            이벤트제거
+        </button>
+    </body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title> </title>
+    <style>
+        body{
+            font-size:9pt;
+            font-family:"굴림";       
+        }
+        
+        ul.menu {
+         padding:10px;
+         list-style:none;
+         border:1px #000 solid;
+        }
+        ul.menu li {
+             border:1px #eeeeee solid;
+            margin:10px;
+        }
+        
+        li.select {
+            background-color:#ccc;
+            
+        }
+    </style>
+    
+    <script type="text/javascript"  src="../../libs/jquery-1.11.0.min.js"></script>
+    <script>
+        /*
+
+        예제03:   실행(#test) 버튼을 누를 때마다
+        선택 메뉴 아이템(li.select) 의 글자 크기를 1px씩 증가시켜 주세요.
+         */
+        $(document).ready(function(){
+            // 선택 메뉴 아이템 구하기
+            var $item = $("ul.menu li.select");
+            // #test에 클릭 이벤트 추가
+            $("#test").click(function(){
+                // 현재 선택한 폰트 크기 구하기
+                var fontSize = parseInt($item.css("fontSize"));
+                
+                // 폰트 크기를 1증가
+                $item.css("fontSize", fontSize+1);
+            })
+        });
+
+
+    </script>
+</head>
+    
+<body>
+    <button id="test">실행</button>
+    <ul class="menu">
+       <li>menu1</li>
+       <li>menu2</li>
+       <li class="select">menu3</li>
+       <li>menu4</li>
+       <li>menu5</li>
+    </ul>        
+</body>
+
+</html>

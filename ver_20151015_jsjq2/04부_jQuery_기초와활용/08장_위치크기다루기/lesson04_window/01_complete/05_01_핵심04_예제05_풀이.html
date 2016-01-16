@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title> </title>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+        }
+        
+      
+        
+        #info{          
+            border:10px solid #ff0000;          
+            position:fixed;
+            left:120px;
+            top:100px;
+        }
+    </style>
+       
+    <script  type="text/javascript" src="../../libs/jquery-1.11.0.min.js"></script>
+    <script>
+        /*
+         예제05: 이동(#move) 버튼을 누르면 새롭게 만든 윈도우 위치를 화면 오른쪽에 정렬해 주세요
+         */
+        $(document).ready(function(){
+            var newWindow =null;
+            $("#create").click(function(){
+                // open()메서드를 활용해 새로운 윈도우 생성
+                newWindow = window.open("", "newWindow", "width=200, height=200");
+            })
+
+            // 여기에 코드를 입력해주세요.
+            $("#move").click(function(){
+                // 신규 윈도우 존재 유무 판단
+                if(newWindow){
+                    // 이동 위치 계산하기
+                   var left = screen.availWidth- newWindow.outerWidth;
+                   var top = newWindow.screenTop;
+
+                    // 신규 윈도우 위치 이동 시키기
+                   newWindow.moveTo(left,top);
+                }
+            })
+        })
+    </script>
+
+</head>
+
+<body>
+    <button id="create">생성</button>
+    <button id="move">이동</button>
+    
+    <div id="info">
+        이동 정보가 여기에 출력 될 거에요.                   
+    </div>
+</body>
+
+</html>

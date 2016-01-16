@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>jQuery 사용 준비!</title>
+        <style>
+            body {
+                font-size: 9pt;
+                font-family: "굴림";
+            }
+        </style>
+
+       
+        <script src="../../libs/jquery-1.11.0.min.js"></script>
+        <script>
+           
+            /*
+             예제 03: DOMContentLoaded 이벤트와 load 이벤트의 차이점
+             */
+            window.onload=function(){
+                console.log("width = "+ $("#target").width());
+            }
+
+         
+        </script>
+    </head>
+
+    <body>
+        <img src="./images/logo_01.jpg" id="target">
+    </body>
+
+</html>

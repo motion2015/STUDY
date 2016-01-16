@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>text scroller </title>
+    <style>
+        .text-scroller {
+            position: absolute;
+            width: 400px;
+            height: 50px;
+            overflow: hidden;
+            border: 1px solid #ff0000;
+        }
+
+        .text-scroller .content {
+            
+            position:absolute;
+            margin: 0;
+            width:1000px;
+            
+            
+        }
+
+
+    </style>
+
+    <script  type="text/javascript"  src="../libs/jquery-1.11.0.min.js"></script>
+    <script>
+        /*
+         step #01
+         - 레이아웃 제작하기
+         */
+
+$(document).ready(function() {
+    $(".content").css("margin-left", 100);
+
+});
+
+    </script>
+</head>
+
+<body>
+    <div id="textScroller1" class="text-scroller">
+        <p class="content">
+            안녕하세요~ 완전 초보자를 위한 자바스크립트 기초와 jQuery 기초 제대로 마스터하기 강의에 오신걸 환영합니다. --- ddandongne
+        </p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title> </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-size: 9pt;
+        }
+        .nav {
+            margin: 30px 0 0 50px;
+        }
+
+        #btn {
+            width: 50px;
+            height: 30px;
+        }
+        
+        #container {
+            position: absolute;
+            width: 300px;
+            height: 200px;
+            left: 50px;
+            top: 100px;
+            border: 1px solid #000;
+            overflow: scroll;
+        }
+        
+        img {
+        	width:1000px;
+        }
+    </style>
+    <script type="text/javascript"  src="../../libs/jquery-1.11.0.min.js"></script>
+
+    <script>
+        /*
+         예제10:확인 버튼(#btn)을 누르면 #container의 스크롤 위치 값을 #info에 출력해 주세요.
+         */
+        $(document).ready(function() {
+            // #info 구하기
+            var $info = $("#info");
+            // #container 구하기
+            var $container = $("#container");
+            // 여기에 풀이를 입력해주세요.
+
+           
+        })
+    </script>
+
+</head>
+
+<body>
+    <div class="nav">
+        <button id="btn">확인 </button>
+        <div id="info">
+            여기에 스크롤 정보가 출력될 거에요.
+        </div>
+    </div>
+    <div id="container" >
+        <img src="sample.png">
+    </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title></title>
+
+<script>
+function Oddeven(){}
+
+Oddeven.prototype.show = function(num){
+	document.write(num + "은 ");
+	    if (num % 2)
+	        document.write("홀수입니다.<br>");
+	    else
+	        document.write("짝수입니다.<br>");
+}
+var o = new Oddeven();
+
+o.show(5);
+o.show(10);
+o.show(19);
+
+</script>
+    </head>
+
+    <body>
+</html>

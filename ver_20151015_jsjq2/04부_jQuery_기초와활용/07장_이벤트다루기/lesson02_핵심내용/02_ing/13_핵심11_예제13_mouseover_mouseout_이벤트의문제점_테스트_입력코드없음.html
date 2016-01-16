@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+    <style>
+        #parent {
+            width:300px;
+            height:100px;
+            position:absolute;
+            left:200px;
+            top:100px;
+            background-color:#f00;
+            border:1px solid #f00;
+            overflow:hidden;
+        }
+        
+         #child {
+            width:100px;
+            height:200px;
+            position:absolute;
+            left:100px;
+            top:0px;
+            
+            background-color:#fff;
+            
+        }
+        
+        #child div {
+            height:100px;
+            text-align:center;
+            line-height:100px;
+            align:center;
+        }
+        
+        #child div.over {
+            background-color:#ff0;
+        }
+    </style>
+    
+<html>
+<head>
+    <script  type="text/javascript"  src="../../libs/jquery-1.11.0.min.js"> </script>
+    <script>
+        /*
+         예제13: mouseover/mouseout 이벤트의 문제점 테스트(입력코드없음)
+         */
+        var count=0;
+        var $info = null;
+        var $child = null;
+        $(document).ready(function(){
+    
+            $info = $("#info");
+            $child  = $("#child");
+            $("#parent").mouseover(function(e){
+                count++;                
+                $info.html($info.html()+"<br>"+count+", "+e.target.id+".over");
+                $child.animate({
+                    top:-100
+                },300);
+            });
+            
+            
+            $("#parent").mouseout(function(e){
+                count++;
+                 $info.html($info.html()+"<br>"+count+", "+e.target.id+".out");
+                $child.animate({
+                    top:0
+                },300);
+            });
+        });
+        
+    </script>
+    
+</head>
+
+<body>
+    <div id="info">
+        여기에 이벤트 정보가 출력될거에요.
+    </div>
+    <div id="parent">
+        parent
+        <div id="child">
+            <div>
+                out
+            </div>
+            <div class="over">
+                over
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title></title>
+        <style>
+            body {
+                font-size: 9pt;
+            }
+            #panel {float:left;
+                width: 600px;
+                height: 500px;
+                border: 1px solid #999;
+                position: relative;
+            }
+
+            #fish {
+                position: absolute;
+                left: 50px;
+                top: 120px;
+            }
+
+            #nav {
+                text-align: center;
+                width: 600px;
+            }
+            .btnsWapper{float:left;}
+        </style>
+        <script src="libs/jquery-1.11.0.min.js"></script>
+        <script>
+        $(document).ready(function() {
+            $(".btn").each(function(idx){
+                $(this).click(function(){
+                    o.move(
+                        $("#panel img").eq(idx),
+                        $(this).parent().find("input").eq(0).val(),
+                        $(this).parent().find("input").eq(1).val()
+                        )
+                })
+            })
+        });
+
+
+        var o ={
+            move : function($img,l,t){
+
+                if ((l >= 0 && l <= 500) && t >= 0 && t <= 300) {
+                    $img.animate({
+                        left : l,top : t
+                    });
+                } else {
+                    alert("입력된 값이 너무 큽니다. 다시 입력해주세요.");
+                }
+            }
+        }
+
+        </script>
+    </head>
+
+    <body>
+        <div>
+            <div id="panel">
+
+                <img src="fish.png" id="fish">
+                <img src="fish.png" id="fish">
+                <img src="fish.png" id="fish">
+                <img src="fish.png" id="fish">
+                <img src="fish.png" id="fish">
+            </div>
+            <div class="btnsWapper">
+                <div id="nav" class="nav">
+                    <label>x값 입력 : </label>
+                    <input id="txtX"> </input>
+                    <br>
+                    <label>y값 입력 : </label>
+                    <input id="txtY"> </input>
+                    <br>
+                    <button id="btnStart" class="btn">
+                        물고기 움직이기
+                    </button>
+
+                </div>
+                <div id="nav" class="nav">
+                    <label>x값 입력 : </label>
+                    <input id="txtX"> </input>
+                    <br>
+                    <label>y값 입력 : </label>
+                    <input id="txtY"> </input>
+                    <br>
+                    <button id="btnStart" class="btn">
+                        물고기 움직이기
+                    </button>
+
+                </div>
+                <div id="nav" class="nav">
+                    <label>x값 입력 : </label>
+                    <input id="txtX"> </input>
+                    <br>
+                    <label>y값 입력 : </label>
+                    <input id="txtY"> </input>
+                    <br>
+                    <button id="btnStart" class="btn">
+                        물고기 움직이기
+                    </button>
+
+                </div>
+                <div id="nav" class="nav">
+                    <label>x값 입력 : </label>
+                    <input id="txtX"> </input>
+                    <br>
+                    <label>y값 입력 : </label>
+                    <input id="txtY"> </input>
+                    <br>
+                    <button id="btnStart" class="btn">
+                        물고기 움직이기
+                    </button>
+
+                </div>
+                <div id="nav" class="nav">
+                    <label>x값 입력 : </label>
+                    <input id="txtX"> </input>
+                    <br>
+                    <label>y값 입력 : </label>
+                    <input id="txtY"> </input>
+                    <br>
+                    <button id="btnStart" class="btn">
+                        물고기 움직이기
+                    </button>
+
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

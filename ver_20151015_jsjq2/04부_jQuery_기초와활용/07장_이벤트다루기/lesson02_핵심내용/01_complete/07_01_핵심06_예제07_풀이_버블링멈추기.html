@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title></title>
+	<style>
+		body{
+			font-size:9pt;
+		
+		}
+	
+	</style>
+
+    <script src="../../libs/jquery-1.11.0.min.js"></script>
+    
+    <script>
+        /*
+         예제 07: 풀이 전 코드에서 각각의 버튼을 누르면 실행화면처럼 메시지가 출력될 수 있게
+         버블링 관련 기능을 이용해 코드를 완성해 주세요.
+
+         */
+        $(document).ready(function() {
+            // #panel에 클릭 이벤트 등록
+            $("#panel").click(function(e) {
+                // 메시지 출력
+                console.log("01. panel에 등록한 클릭 이벤트.")
+            });
+
+            // #btn1에 클릭 이벤트 등록
+            $("#btn1").click(function(e){
+                // "02. 버블링 처리" 메시지 출력
+                console.log("02. 버블링 처리");
+            });
+
+            // #btn2에 클릭 이벤트 등록
+            $("#btn2").click(function(e){
+                // "03. 버블링 중지" 메시지 출력
+                console.log("03. 버블링 중지");
+                // 버블링 중지
+                e.stopPropagation();
+            })
+        })
+    </script>
+
+</head>
+
+<body>
+    <div id="panel">
+        <button id="btn1">버블링처리</button>
+        <button id="btn2">버블링중지</button>
+    </div>
+</body>
+
+</html>

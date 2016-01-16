@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title> </title>
+    <style>
+        body{
+            font-size:9pt;
+            font-family:"굴림";       
+        }
+        
+        ul.menu {
+         padding:10px;
+         list-style:none;
+         border:1px #000 solid;
+        }
+        ul.menu li {
+             border:1px #eeeeee solid;
+            margin:10px;
+        }
+        
+        li.select {
+            background-color:#ccc;
+            
+        }
+    </style>
+    
+    <script type="text/javascript"  src="../../libs/jquery-1.11.0.min.js"></script>
+    <script>
+        /*
+        예제04: 실행 버튼을 누르면
+        메뉴 아이템의 폰트 크기를 10부터 시작해서 5씩 증가시켜 적용해주세요.
+
+         */
+        $(document).ready(function(){
+
+            $("#test").click(function(){
+
+                // 기본 사이즈
+                var size=10;
+
+                // 메뉴 아이템 개수 만큼 루프 돌기 =
+               $("ul.menu li").each(function(index){
+                   // 해당 메뉴 아이템 접근해 폰트 설정
+                   $(this).css({
+                       fontSize:size
+                   })
+
+                   // 폰트 사이즈 5씩 증가
+                   size+=5;
+               })
+            })
+        });
+
+
+    </script>
+</head>
+    
+<body>
+    <button id="test">실행</button>
+    <ul class="menu">
+       <li>menu1</li>
+       <li>menu2</li>
+       <li class="select">menu3</li>
+       <li>menu4</li>
+       <li>menu5</li>
+    </ul>        
+</body>
+
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Untitled Document</title>
+<style>
+	
+	
+	.text-scroller {
+		position:absolute;
+		
+		width:400px;
+		height:50px;
+			
+		border:1px solid #ff0000;
+	}
+	
+	.text-scroller .content{		
+		position: absolute;		
+		left:0;
+		top:0;		
+		margin:0;
+	}
+	
+	
+	#textScroller1{				
+		width:400px;		
+		left:10px;
+		top:10px;
+	}
+	
+	
+	#textScroller1 .content{
+		width:1000px;		
+	}
+	
+	
+	#textScroller2{				
+		width:500px;		
+		left:10px;
+		top:100px;
+	}
+	
+	
+	#textScroller2 .content{
+		width:1300px;		
+	}
+	
+	
+	
+	
+</style>
+
+	<script  type="text/javascript"  src="../libs/jquery-1.11.0.min.js"> </script>	
+<script>
+/*
+	step #05
+		- 이벤트 처리 
+		- 멈춤 기능 추가
+			
+	step #04
+		- 자동 스크롤 기능 만들기 
+
+	step #03
+		- 특정 위치로 텍스트 이동 기능 만들기		
+	step #02
+		- TextScroller 클래스 생성자 만들기
+	step #01
+ 	 	- 레이아웃 제작하기
+ 	 	
+*/
+
+
+$(document).ready(function(){
+	var ts1 = new TextScroller("#textScroller1",50);
+	var ts2 = new TextScroller("#textScroller2",20);
+});
+
+function TextScroller(selector,speed){
+	this.$target=null;
+	this.$content=null;
+	this.maxScrollSize = 0;
+	this.currentPos = 0;
+	this.startPos = 0;
+	this.timerID = 0;
+	this.speed =speed;
+	
+	this.init(selector);
+	this.initEvent();
+	
+	this.setPosition(this.startPos);
+	this.play();
+}
+
+
+// 요소 초기화
+TextScroller.prototype.init=function(selector){
+	this.$target = $(selector);
+	this.$content = this.$target.find(".content");
+	this.maxScrollSize = this.$content.width();
+	this.startPos   	= this.$target.width();
+}
+
+
+// 이벤트 처리
+TextScroller.prototype.initEvent=function(){
+	var objThis = this;
+	this.$target.on("mouseenter",function(){
+		objThis.stop();
+	});	
+	
+	this.$target.on("mouseleave",function(){
+		objThis.play();
+	});
+		
+}
+
+// 위치 이동
+TextScroller.prototype.setPosition=function(pos){
+	this.currentPos = pos;
+	if(this.currentPos<-this.maxScrollSize){
+		this.currentPos = this.startPos;
+	}
+	
+	this.$content.css("left", this.currentPos);
+		
+}
+
+// 텍스트 스크롤 시작
+TextScroller.prototype.play=function(){
+	var objThis = this;
+	if(this.timerID==0){
+		this.timerID = setInterval(function(){				
+			objThis.setPosition(objThis.currentPos-2);	
+		},this.speed);
+	}
+}
+
+// 텍스트 스크롤 멈춤
+TextScroller.prototype.stop=function(){
+	clearInterval(this.timerID);
+	this.timerID=0;
+}
+
+	
+	
+	
+</script>
+</head>
+
+<body>
+	<div id="textScroller1" class="text-scroller">
+		<p class="content">안녕하세요~ 완전 초보자를 위한 자바스크립트 기초와 jQuery 기초 제대로 마스터하기 강의에 오신걸 환영합니다. --- ddandongne</p>		
+	</div>
+	
+	<div id="textScroller2" class="text-scroller">
+		<div class="content">이 내용도 스크롤되게 만들어주세요. 단, 스크롤 속도는 좀더 박진감이 넘치도록 좀 빠르게  해주세요. 그럼... 어떻게 해야할까요? 가장 좋은 방법을 찾아서 해결해주세요.</div>		
+	</div>
+	
+	
+</body>
+</html>

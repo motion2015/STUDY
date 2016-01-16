@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title></title>
+    <style>
+        body{
+            font-size:9pt;
+        
+        }
+        
+        * {
+            margin:50px;
+            border:1px solid #f00;
+            min-height: 20px;
+            cursor:pointer;
+        }
+    </style>
+
+    <script src="../../libs/jquery-1.11.0.min.js"></script>
+
+    <script>
+        var count=0;
+        $(document).ready(function(){
+            // 캡쳐 단계에 이벤트 등록
+            document.addEventListener("click",function(e){
+                count++;
+                console.log("01. doument phase="+e.eventPhase, "count="+count);
+                //e.stopPropagation();
+            },true);
+
+            // 캡쳐 단계에 이벤트 등록
+            document.body.addEventListener("click",function(e){
+                count++;
+                console.log("02. body phase="+e.eventPhase, "count="+count);
+            },true);
+
+            // 캡쳐 단계에 이벤트 등록
+            $("#A1").get(0).addEventListener("click", function(e){
+                count++;
+                console.log("03. A1 phase="+e.eventPhase, "count="+count);
+            },true);
+
+             // 캡쳐 단계에 이벤트 등록
+            $("#B1").get(0).addEventListener("click", function(e){
+                count++;
+                console.log("04. B1 phase="+e.eventPhase, "count="+count);
+            },true);
+
+            // 캡쳐 단계에 이벤트 등록
+            $("#A2").get(0).addEventListener("click", function(e){
+                count++;
+                console.log("05. A2 phase="+e.eventPhase, "count="+count);
+            },true);
+
+
+            // 캡쳐/버블 단계에 이벤트 등록
+            $(document).on("click",function(e){
+                count++;
+                console.log("11. doument phase="+e.eventPhase, "count="+count);
+
+            });
+
+             // 캡쳐 단계에 이벤트 등록
+             $("body").on("click",function(e){
+                count++;
+                console.log("12. body phase="+e.eventPhase, "count="+count);
+            });
+
+            // 캡쳐 단계에 이벤트 등록
+            $("#A1").on("click", function(e){
+                count++;
+                console.log("13. A1 phase="+e.eventPhase, "count="+count);
+            });
+
+           // 캡쳐 단계에 이벤트 등록
+            $("#B1").on("click", function(e){
+                count++;
+                console.log("14. B1 phase="+e.eventPhase, "count="+count);
+            });
+
+            // 캡쳐 단계에 이벤트 등록
+            $("#A2").on("click", function(e){
+                count++;
+                console.log("15. A2 phase="+e.eventPhase, "count="+count);
+            });
+
+            // 캡쳐 단계에 이벤트 등록
+            $("#B2").on("click", function(e){
+                count++;
+                console.log("16. B2 phase="+e.eventPhase, "count="+count);
+            });
+        })
+
+    </script>
+
+</head>
+
+<body>  
+    <div id="A1">
+        A1
+        <div id="B1">
+            B1
+            <div id="C1">
+                C1
+            </div>
+        </div>      
+    </div> 
+    <div id="A2">
+        A2
+        <div id="B2">
+            B2
+            <div id="C2">
+                C2
+            </div>
+        </div>      
+    </div> 
+</body>
+</html>

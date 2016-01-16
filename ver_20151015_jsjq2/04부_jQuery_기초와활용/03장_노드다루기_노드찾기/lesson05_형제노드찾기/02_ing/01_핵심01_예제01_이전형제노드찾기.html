@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title></title>
+        <style>
+            body {
+                font-size: 9pt;
+                font-family: "굴림";
+            }
+            div, p, ul, li {
+                border: 1px #eeeeee solid;
+                margin: 10px;
+            }
+            ul {
+                padding: 10px;
+            }
+            li.select {
+                background-color: #ccc;
+            }
+        </style>
+
+        <script type="text/javascript"  src="../../libs/jquery-1.11.0.min.js"></script>
+        <script>
+            
+            /*
+             예제01: 실행화면처럼 메뉴 항목에서 select 클래스가 적용된 노드의
+             바로 앞의 이전 노드(menu2)를 찾아 border를 “4px solid #f00” 값으로 변경해주세요.
+             */
+            $(document).ready(function() {
+
+                ?.css("border", "4px solid #f00");
+            });
+
+        </script>
+    </head>
+
+    <body>
+        <ul class="menu">
+            <li>menu1</li>
+            <li>menu2</li>
+            <li class="select">menu3</li>
+            <li>menu4</li>
+            <li>menu5</li>
+            <li>menu6</li>
+        </ul>
+    </body>
+
+</html>

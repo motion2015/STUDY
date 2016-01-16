@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title></title>
+
+<script>
+(function($){
+	function Oddeven(){}
+	Oddeven.prototype.show = function(num){
+		document.write(num + "은 ");
+		    if (num % 2)
+		        document.write("홀수입니다.<br>");
+		    else
+		        document.write("짝수입니다.<br>");
+	}
+	o = new Oddeven();
+})();
+
+o.show(5);
+o.show(10);
+o.show(19);
+
+/*셀프함수
+(function($){
+
+})(jQuery);
+*/
+/*슬릭그리드*/
+/*jQ그리드*/
+</script>
+</head>
+
+<body>
+</html>

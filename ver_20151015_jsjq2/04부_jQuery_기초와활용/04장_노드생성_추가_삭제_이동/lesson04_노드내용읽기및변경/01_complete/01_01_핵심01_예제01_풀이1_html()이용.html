@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title> </title>
+    <style>
+        body{
+            font-size:9pt;
+            font-family:"굴림";       
+        }
+        div, p, ul, li{
+            border:1px #eeeeee solid;
+            margin:10px;
+        }
+        ul {
+         padding:10px;
+        }
+        li.select {
+            background-color:#ccc;
+        }
+    </style>
+    
+    <script type="text/javascript"  src="../../libs/jquery-1.11.0.min.js"> </script>
+    <script>
+        /*
+        핵심01-노드 내용을 문자열로 읽기
+        사용법
+        $대상.html()
+        $대상.text()
+        
+        노드 내용을 알아내는 방법은 html() 메서드와 text() 메서드 두 가지가 있습니다. 
+        이 둘은 차이점이 있는데요. 예제를 통해 알아보겠습니다.
+        
+        예제:
+        체크버튼(#check)을 누르면 ul.menu 노드의 내부가 어떤 구조로 돼 있는지 실행화면처럼 문자열로 출력해주세요.
+        
+         */
+        $(document).ready(function(){    
+          
+            $("#ok").click(function(){
+               console.log($(".menu").html());
+               
+            })
+        });
+
+
+
+    </script>
+</head>
+    
+<body>
+    <button id="ok">확인</button>
+    <ul class="menu">
+        <li>menu1</li>
+        <li>menu2</li>
+        <li class="select">menu3</li>
+        <li>menu4</li>
+        <li>menu5</li>
+        <li>menu6</li>
+    </ul>        
+</body>
+
+</html>

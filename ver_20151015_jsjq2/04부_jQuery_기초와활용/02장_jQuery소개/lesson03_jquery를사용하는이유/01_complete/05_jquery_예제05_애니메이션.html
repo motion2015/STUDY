@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title></title>
+        <style>
+            body {
+                font-size: 9pt;
+            }
+            #panel {
+                width: 600px;
+                height: 300px;
+                border: 1px solid #999;
+                position: relative;
+            }
+
+            #bar {
+                position: absolute;
+                left: 50px;
+                top: 190px;
+                width: 500px;
+                height: 20px;
+                background: #F30;
+            }
+
+            #fish {
+                position: absolute;
+                left: 50px;
+                top: 120px;
+            }
+
+            #nav {
+                text-align: center;
+                width: 600px;
+            }
+        </style>
+
+        <script type="text/javascript"  src="../../libs/jquery-1.11.0.min.js"></script>
+        <script>
+            /*
+             예제 05: 버튼을 클릭하면 물고기를 왼쪽에서 오른쪽으로 움직여 주세요.
+
+             */
+            $(document).ready(function() {
+
+                //물고기 노드 구하기.
+                var $fish = $("#fish");
+
+                $("#btnStart").click(function() {
+                    // 물고기 움직이기
+                    $fish.animate({
+                        left : 430
+                    }, 5000);
+                 
+                });
+            });
+
+        </script>
+    </head>
+
+    <body>
+        <div>
+
+            <div id="panel">
+                <div id="bar"></div>
+                <img src="fish1.png" id="fish">
+            </div>
+            <div id="nav">
+                <button id="btnStart">
+                    클릭하면 물고기가 움직여요.
+                </button>
+            </div>
+        </div>
+    </body>
+</html>
+

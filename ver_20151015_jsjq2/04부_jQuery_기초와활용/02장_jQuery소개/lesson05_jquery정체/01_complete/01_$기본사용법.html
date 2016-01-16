@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+    <head>
+        <title></title>
+        <script src="../../libs/jquery-1.11.0.min.js"></script>
+        <script>
+            /*
+
+             01. $() 기본 사용법
+             - $("CSS선택자").메서드호출();
+
+             예)문서에서 div 태그의 border 속성을 모두 “4px solid #f00”으로 변경
+
+             */
+            $(document).ready(function() {
+                $("div").css("border", "4px solid #f00");
+            })
+
+        </script>
+    </head>
+    <body>
+        <div>div-data1</div>
+        <div>div-data2</div>
+        <div>div-data3</div>
+        <div>div-data4</div>
+        <p>p-data1</p>
+        <p>p-data2</p>
+        <p>p-data3</p>
+        <p>p-data4</p>
+    </body>
+</html>

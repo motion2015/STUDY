@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title> </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-size: 9pt;
+        }
+        .nav {
+            margin: 30px 0 0 50px;
+        }
+        #parent1 {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            left: 50px;
+            top: 100px;
+            border: 1px solid #000;
+        }
+
+        #child {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            left: 100px;
+            top: 100px;
+            background-color: #ccc;
+            padding: 20px;
+            border: 30px solid #000;
+        }
+
+    </style>
+    <script type="text/javascript"  src="../../libs/jquery-1.11.0.min.js"></script>
+    <script>
+        /*
+         예제09: 풀이 전 코드에서 “width()를 활용한 크기 변경” 버튼을 누르면
+         child의 크기를 width() 메서드와 height() 메서드를 이용해서 200x200 크기로 변경되게 하고,
+         “innerWidth() 를 활용한 크기 변경” 버튼을 누르면
+         child의 크기를 innerWidth()와 innerHeight() 메서드를 이용해서
+         200x200 크기로 변경되게 해주세요.
+
+         */
+        $(document).ready(function() {
+            var $child = $("#child");
+            // 여기에 풀이를 입력해주세요.
+            // #btn1에 클릭 이벤트 등록
+            $("#btn1").click(function(e) {
+                // #child의 widht,height() 메서드를 활용해 너비와 높이를 200으로 설정
+                $child.width(200);
+                $child.height(200);
+
+            });
+            $("#btn2").click(function(e) {
+                // #child의 innerWidth()메서드를 활용해 너비와 높이를 200으로 설정
+                $child.innerWidth(200);
+                $child.innerHeight(200);
+
+            });
+        })
+    </script>
+</head>
+<body>
+    <div class="nav">
+        <button id="btn1">
+            width()를 활용한 크기 변경
+        </button>
+        <br>
+        <button id="btn2">
+            innerWidth()를 활용한 크기 변경
+        </button>
+        <br>
+    </div>
+    <div id="parent1">
+        parent1
+        <div id="child">
+            child
+        </div>
+    </div>
+</body>
+</html>

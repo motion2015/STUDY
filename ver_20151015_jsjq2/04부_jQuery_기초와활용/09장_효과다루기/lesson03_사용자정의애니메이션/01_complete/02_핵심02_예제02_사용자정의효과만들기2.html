@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title></title>
+	<style>
+		#target{
+			border:1px #000000 solid;
+			width:200px;
+			height:120px;		
+			text-align:center;		
+			position: relative;
+		}		
+	</style>
+	
+	
+	<script type="text/javascript"  src="../../libs/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript"  src="../../libs/jquery.easing.1.3.js"></script>      
+    <script>
+
+        /*
+        예제02- animate()를 활용해 사용자 정의 효과 만들기
+        hide버튼을 누르면 타겟(#target)을 화면에서 보이지 않게 만들어주세요.
+        단, 애니메이션 시간은 6초, 사라지는 최종 위치는 left와 top이 각각 500,200 입니다.
+        이징함수는 easeOutQuint를 사용해주세요.
+        추가적으로 애니메이션이 완료되면 “애니메이션 종료” 메시지를 출력해주세요.
+
+         */
+        $(document).ready(function(){
+            //  움직일 대상 찾기.
+            var $img1 = $("#target");
+
+            // 나타나는 효과 시작.
+            $("#hide").on("click", function(){
+                $img1.animate({
+                        opacity:0,
+                        left:500,
+                        top:200
+                    },6000,"easeOutQuint",
+                    function(){
+                        alert("애니메이션 종료");
+                    }
+                );
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <div>
+        <button id="hide">hide</button>
+    </div>
+    <div id="target"> 
+        <img src="ch2.png">
+    </div>       
+</body>
+
+</html>

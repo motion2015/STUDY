@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title> </title>
+    <style>
+        body{
+            font-size:9pt;
+            font-family:"굴림";       
+        }
+        div, p, ul, li{
+            border:1px #eeeeee solid;
+            margin:10px;
+        }
+        ul {
+         padding:10px;
+        }
+        li.select {
+            background-color:#ccc;
+        }
+    </style>
+    
+    <script type="text/javascript"  src="../../libs/jquery-1.11.0.min.js"> </script>
+    <script>
+        /*
+         예제 02 실행화면처럼 메뉴 아이템을 클릭하면 메뉴 아이템의 내용을 다음과 같이 변경해 주세요.
+         <li>menuX</li> -> <li><a href="http://www.webdongne.com">new menuX</li>
+         */
+        $(document).ready(function(){
+          $("ul.menu li").click(function(){
+
+          })
+        });
+
+
+
+    </script>
+</head>
+    
+<body>
+
+    <ul class="menu">
+        <li>menu1</li>
+        <li>menu2</li>
+        <li class="select">menu3</li>
+        <li>menu4</li>
+        <li>menu5</li>
+        <li>menu6</li>
+    </ul>        
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title></title>
+        <style>
+            #target {
+                border: 1px #000000 solid;
+                width: 200px;
+                height: 120px;
+                text-align: center;
+            }
+        </style>
+
+        <script type="text/javascript"  src="../../libs/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript"  src="../../libs/jquery.easing.1.3.js"></script>
+
+        <script>
+            /*
+
+
+             예제04:
+             slideDown() 메서드와 slideUp() 메서드를 이용해 나타나고 사라지는 효과를 만들어 주세요.
+             단, 애니메이션 시간은 6초로 하고 나타날 때는 “easeInBounce” 이징
+             효과를, 사라질 때는 “easeOutBounce” 이징 효과를 적용해 주세요.
+
+             */
+
+            $(document).ready(function() {
+                //  움직일 대상 찾기.
+                var $img1 = $("#target");
+
+                // 나타나는 효과
+                $("#show").on("click", function() {
+                    $img1.?(6000, "easeInBounce");
+                });
+
+                // 사라지는 효과 시작.
+                $("#hide").on("click", function() {
+                    $img1.?(6000, "easeOutBounce");
+                });
+            });
+        </script>
+
+    </head>
+    <body>
+        <div id="target">
+            <img id="img_1" src="ch2.png">
+        </div>
+        <div>
+            <button id="show">
+                slideDown
+            </button>
+            <button id="hide">
+                slideUp
+            </button>
+        </div>
+    </body>
+
+</html>

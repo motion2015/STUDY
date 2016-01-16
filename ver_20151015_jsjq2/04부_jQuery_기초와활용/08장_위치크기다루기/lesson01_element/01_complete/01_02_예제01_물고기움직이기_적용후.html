@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title></title>
+	<style>
+		body{
+			font-size:9pt;
+
+		}
+		#panel{
+			width:600px;
+			height:300px;
+			border:1px solid #999;
+			position:relative;
+		}
+
+		.bar{
+			position:absolute;
+			left:50px;
+			top:190px;
+			width:500px;
+			height:20px;
+
+			background:#F30;
+		}
+
+		#fish{
+			position:absolute;
+			left:50px;
+			top:120px;
+		}
+
+
+	</style>
+
+<script type="text/javascript"  src="../../libs/jquery-1.11.0.min.js"> </script>
+<script>
+	/* 위치 크기 기능을 사용한 방식 */
+    $(document).ready(function(){   
+        // 물고기 노드 구하기.
+        var $fish = $("#fish");
+        
+        // 버튼에 이벤트 걸기.
+        $("#move").click(function(){
+            // 물고기 위치 값 구하기
+            var currentX = $fish.position().left+10;
+            // 위치 값 설정하기
+            $fish.css("left", currentX);
+        });
+    })  
+</script>
+
+</head>
+
+<body>  
+    <div id="panel">
+        <div class="bar"> </div>            
+        <img src="fish.png" id="fish">
+    </div>
+    
+    <div>
+        <button id="move">이동</button>   
+    </div>  
+</body>
+</html>

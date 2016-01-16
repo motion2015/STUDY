@@ -1,0 +1,90 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title> </title>
+
+    <style>
+        div.image-container{
+            position: relative;
+            border:1px solid #000;
+            height:600px;
+        }
+
+        div.image-container img{
+            position: absolute;
+            left:0;
+            top:0;
+            width:120px;
+        }
+    </style>
+
+
+    <script type="text/javascript"  src="libs/jquery-1.11.0.min.js"> </script>
+    <script>
+
+    $(document).ready(function(){
+      //  imageGallery.gallery($("#container1 img"),3,150,100);
+      //  imageGallery.gallery($("#container2 img"),3,150,100);
+        var o=new Gallery();
+        o.init($("#container1 img"),3,150,100);
+        o.init($("#container2 img"),3,150,100);
+    })
+
+
+   /* 변수처럼 인식함.
+    ImageGallery = function(){  }
+   */
+
+    function Gallery(){};
+
+    Gallery.prototype.show = function(){}
+
+    Gallery.prototype.init = function($images,cols,xw,yw){
+        var length = $images.length;
+
+        for(var i=0;i<length;i++){
+            // n번째 이미지 구하기
+            var $img = $images.eq(i);
+            // 위치 값 구하기
+            var l = 100+((i%cols)*xw);
+            var t = 100+(parseInt(i/cols)*yw);
+            // 위치 설정
+            $img.css({
+                left:l,
+                top:t
+            });
+        }  
+    }
+    </script>
+</head>
+    
+<body>
+    
+    <p>container1</p>
+    <div class="image-container" id="container1">
+       
+        <img src="banners/1.png" >
+        <img src="banners/2.png" >
+        <img src="banners/3.png" >
+        <img src="banners/4.png" >
+        <img src="banners/5.png" >
+        <img src="banners/6.png" >
+        <img src="banners/7.png" >
+        <img src="banners/8.png" >   
+    </div>
+     <p>container2</p>
+     <div class="image-container" id="container2">
+         
+        <img src="banners/1.png" >
+        <img src="banners/2.png" >
+        <img src="banners/3.png" >
+        <img src="banners/4.png" >
+        <img src="banners/5.png" >
+        <img src="banners/6.png" >
+        <img src="banners/7.png" >
+        <img src="banners/8.png" >   
+    </div>
+</body>
+</html>

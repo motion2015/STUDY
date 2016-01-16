@@ -1,0 +1,135 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>미션</title>
+
+    <style>
+        div.image-container {
+            position: relative;
+        }
+
+        div.image-container img {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 120px;
+        }
+    </style>
+
+    <script type="text/javascript"  src="libs/jquery-1.11.0.min.js"></script>
+    <script>
+        var o = {
+	    move : function (opt) {
+	      var dft = {
+	        $imgs:null,
+	        sl:100,
+	        st:100,
+	        c:3,
+	        w:200,
+	        h:200
+	      };
+	      console.log("before:"+dft.sl)
+	      $.extend(dft, opt);
+	      console.log("after:"+dft.sl);
+	      // 이미지 개수 구하기.
+	      var length = dft.$imgs.length;
+	      
+	      // 이미지 배열하기.
+	      for (var i = 0; i < length; i++) {
+	        // n번째 이미지 구하기
+	        var $img = dft.$imgs.eq(i);
+	        
+	        // 위치 값 구하기
+	        var x = dft.sl + ((i % dft.c) * dft.w);
+	        var y = dft.st + (parseInt(i / dft.c) * dft.h);
+	        
+	        // 위치 설정
+	        $img.css({
+	          left : x,
+	          top : y
+	        });
+	      }
+	    }
+	  };//객체기본형태.
+	  
+	  // case 3
+	  
+	  
+	  (function(win){
+	    
+	    function Move(){
+	      this.move = function (opt) {
+	        var dft = {
+	          $imgs:null,
+	          sl:100,
+	          st:100,
+	          c:3,
+	          w:200,
+	          h:200
+	        };
+	        console.log("before:"+dft.sl)
+	        $.extend(dft, opt);
+	        console.log("after:"+dft.sl);
+	        // 이미지 개수 구하기.
+	        var length = dft.$imgs.length;
+	        
+	        // 이미지 배열하기.
+	        for (var i = 0; i < length; i++) {
+	          // n번째 이미지 구하기
+	          var $img = dft.$imgs.eq(i);
+	          
+	          // 위치 값 구하기
+	          var x = dft.sl + ((i % dft.c) * dft.w);
+	          var y = dft.st + (parseInt(i / dft.c) * dft.h);
+	          
+	          // 위치 설정
+	          $img.css({
+	            left : x,
+	            top : y
+	          });
+	        }
+	      };
+	    }
+	    win.m = new Move();
+	    
+	  })(window);
+	  
+	  $(document).ready(function() {
+	    
+	    // 이미지 찾기.
+	    var $images = $("#container1 img");
+	    //move($images, 50, 50, 2, 200, 200);
+	    
+	    m.move({
+	      $imgs:$images
+	    });
+	    
+	    $("#btnStart").click(function(){
+	      m.move({
+	        $imgs:$images,
+	        sl:75,
+	        st:75,
+	        w:150,
+	        h:150
+	      });
+	    });
+	  });
+    </script>
+</head>
+
+<body>
+    <button id="btnStart">시작</button>
+    <div class="image-container" id="container1">
+        <img src="banners/1.png" >
+        <img src="banners/2.png" >
+        <img src="banners/3.png" >
+        <img src="banners/4.png" >
+        <img src="banners/5.png" >
+        <img src="banners/6.png" >
+        <img src="banners/7.png" >
+        <img src="banners/8.png" >
+    </div>
+</body>
+</html>

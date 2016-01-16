@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>미션</title>
+
+    <style>
+        div.image-container{
+            position: relative;
+        }
+
+        div.image-container img{
+            position: absolute;
+            left:0;
+            top:0;
+            width:120px;
+        }
+    </style>
+
+    <script type="text/javascript"  src="libs/jquery-1.11.0.min.js"> </script>
+    <script>
+
+        $(document).ready(function(){
+          simpleGallery($("#container1 img"),3,150,100);
+        });
+
+        function simpleGallery($images,cols,lw,tw){
+            $images.each(function(idx,img){
+                var left = 0+((idx % cols) * lw);
+                var top = 0+(parseInt(idx/cols) * tw);
+
+                // 위치 설정                
+                $(img).animate({
+                    left:left,
+                    top:top
+                },2000);
+            })
+        }
+    </script>
+</head>
+    
+<body>
+    <div class="image-container" id="container1">
+        <img src="banners/1.png" >
+        <img src="banners/2.png" >
+        <img src="banners/3.png" >
+        <img src="banners/4.png" >
+        <img src="banners/5.png" >
+        <img src="banners/6.png" >
+        <img src="banners/7.png" >
+        <img src="banners/8.png" >   
+    </div>
+</body>
+</html>

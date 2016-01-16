@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title></title>
+        <style>
+            body {
+                font-size: 9pt;
+                font-family: "굴림";
+            }
+            div, p, ul, li {
+                border: 1px #eeeeee solid;
+                margin: 10px;
+            }
+            ul {
+                padding: 10px;
+            }
+            li.select {
+                background-color: #ccc;
+            }
+        </style>
+
+        <script type="text/javascript"  src="../../libs/jquery-1.11.0.min.js"></script>
+        <script>
+            /*
+
+             예제01:
+             추가 버튼을 클릭할 때마다 신규 메뉴 아이템을 생성해 주세요.
+
+             */
+            $(document).ready(function() {
+                var count = 0;
+                $("#btnAdd").click(function() {
+                    count++;
+                    //신규 노드를 생성
+                    var newLI = document.createElement("li");
+                    // 신규 노드의 텍스트 노드 생성
+                    var liText = document.createTextNode("new menu" + count);
+                    // 텍스트 노드를 신규 노드에 추가
+                    newLI.appendChild(liText);
+
+                    // 테스트를 위한 신규 노드 출력
+                    console.log(newLI);
+
+                })
+            });
+
+        </script>
+    </head>
+
+    <body>
+        <button id="btnAdd">
+            추가
+        </button>
+        <ul class="menu">
+            <li>
+                menu1
+            </li>
+            <li>
+                menu2
+            </li>
+            <li class="select">
+                menu3
+            </li>
+            <li>
+                menu4
+            </li>
+            <li>
+                menu5
+            </li>
+            <li>
+                menu6
+            </li>
+        </ul>
+    </body>
+
+</html>

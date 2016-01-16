@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title></title>
+        <style>
+            #target {
+                border: 1px #000000 solid;
+                width: 200px;
+                height: 120px;
+                text-align: center;
+                position: relative;
+            }
+        </style>
+
+        <script type="text/javascript"  src="../../libs/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript"  src="../../libs/jquery.easing.1.3.js"></script>
+        <script>
+            /*
+
+             예제03- 다음은 방금 앞에서 다룬 핵심01 예제에 stop 버튼을 추가한 예제입니다.
+             stop 버튼을 누르면 동작중인 애니메이션 효과가 멈추도록 만들어주세요.
+
+             */
+            $(document).ready(function() {
+                //  움직일 대상 찾기.
+                var $img1 = $("#target");
+
+                // 사라지는 효과 시작.
+                $("#hide").on("click", function() {
+                    $img1.animate({
+                        opacity : 0,
+                        left : 500,
+                        top : 200
+                    }, 6000, "easeOutQuint", function() {
+                        alert("애니메이션 종료");
+                    });
+                });
+
+
+                // 멈추기
+            });
+        </script>
+
+    </head>
+    <body>
+        <div>
+            <button id="hide">
+                hide
+            </button>
+            <button id="stop">
+                stop
+            </button>
+        </div>
+        <div id="target">
+            <img src="ch2.png">
+        </div>
+    </body>
+
+</html>

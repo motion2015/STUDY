@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title></title>
+	<style>
+		body{
+			font-size:9pt;
+		
+		}
+	
+	</style>
+
+    <script src="../../libs/jquery-1.11.0.min.js"></script>
+    
+    <script>
+    /*
+
+    예제06: 확인버튼(#btn)을 클릭하면 안녕하세요 메시지를 출력해주세요.
+    단 이벤트 리스너는 오직 한번만 실행되게 만들어주세요.
+    
+     */
+        $(document).ready(function(){
+            // #test에 클릭 이벤트 등록
+            $("#test").one("click",function(e){
+                // 환영합니다. 메시지 출력
+                alert("환영합니다.");
+                // 기본 행동 취소
+                e.preventDefault();
+            })
+        })
+    </script>
+
+</head>
+
+<body>
+    <a href="http://www.webdongne.com" id="test">웹동네로 이동</a>
+</body>
+
+</html>

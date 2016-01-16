@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title></title>
+        <style>
+            body {
+                font-size: 11pt;
+            }
+
+            .header {
+                text-align: center;
+            }
+
+        </style>
+
+        <script src="../../libs/jquery-1.11.0.min.js"></script>
+
+        <script>
+            /*
+
+             예제03 - 다음 문서에서 이미지를 누를때 마다 이미지를 ch1.png<->ch2.png로 번갈아가며 변경되게 만들어주세요.
+
+             */
+            $(document).ready(function() {
+                // #target 찾기
+                var $img = $("#target");
+                // sw 변수 생성
+                var sw = true;
+                // #target에 클릭 이벤트 등록
+                $img.click(function() {
+                    // sw 값을 true<-->false로 변경
+                    sw = !sw;
+
+                    // sw가 true 일때는 #target의 src 속성 값을 ch2.png로
+                    // false 일때는 #target의 src 속성 값을 ch3.png로 변경
+                    if (sw == true)
+                        $img.attr("src", "ch2.png");
+                    else
+                        $img.attr("src", "ch3.png");
+                });
+            })
+        </script>
+
+    </head>
+
+    <body>
+        <img src="ch2.png" id="target">
+    </body>
+
+</html>

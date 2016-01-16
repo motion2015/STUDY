@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+    <head>
+        <title></title>
+        <script src="../../libs/jquery-1.11.0.min.js"></script>
+        <script>
+            /*
+
+             예)메뉴 추가 버튼을 클릭할 때마다 신규 메뉴 항목이 추가
+
+             */
+            $(document).ready(function() {
+                var count = 0;
+                $("#add").click(function() {
+                    count++;
+                    $("#menu").append("<li>newmenu" + count + "</li>");
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <button id="add">
+            메뉴추가
+        </button>
+        <ul id="menu">
+            <li>
+                menu
+            </li>
+        </ul>
+    </body>
+</html>

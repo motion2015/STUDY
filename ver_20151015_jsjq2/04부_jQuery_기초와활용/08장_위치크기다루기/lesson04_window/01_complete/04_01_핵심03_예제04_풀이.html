@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title> </title>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+        }
+        
+      
+        
+        #info{          
+            border:10px solid #ff0000;          
+            position:fixed;
+            left:120px;
+            top:100px;
+        }
+    </style>
+       
+    <script  type="text/javascript" src="../../libs/jquery-1.11.0.min.js"></script>
+    <script>
+        /*
+         예제04: 윈도우 크기가 변경되는 경우 현재 윈도우 크기를 실행화면처럼 #info에 출력해 주세요.
+         */
+        $(document).ready(function(){
+            // resize 이벤트 리스너 등록
+            $(window).on("resize",function(){
+                // 윈도우 크기 구하기
+                var strInfo="";
+                strInfo += "window.outerWidth = "+window.outerWidth+"<br>";
+                strInfo += "window.outerHeight = "+window.outerHeight+"<br>";
+
+                // 윈도우 정보 출력
+                $('#info').html(strInfo);
+            })
+        })
+    </script>
+
+</head>
+
+<body>
+    <div id="info">
+        여기에 윈도우 크기가 출력됩니다. 
+    </div>
+</body>
+
+</html>

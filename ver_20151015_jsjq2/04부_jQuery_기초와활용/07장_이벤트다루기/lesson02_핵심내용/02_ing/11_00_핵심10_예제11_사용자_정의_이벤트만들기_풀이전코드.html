@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title></title>
+    <style>
+        body{
+            font-size:9pt;
+            font-family:"굴림";
+        }
+        ul, li{
+            border:1px #eeeeee solid;
+            margin:10px;
+        }
+        ul {
+            padding:10px;
+        }
+        li.select {
+            background-color:#ccc;
+        }
+
+        #output {
+            border:1px solid #000;
+            min-height:100px;
+        }
+    </style>
+
+    <script src="../../libs/jquery-1.11.0.min.js"></script>
+    
+  <script>
+      /*
+       예제11: 다음 문서에는 추가 버튼을 누르면 신규 메뉴 항목을 추가하는 기능이 구현돼 있습니다.
+       이 문서에 사용자 정의 이벤트를 추가해 실행화면과 같이 실행될 수 있게 만들어 주세요.
+
+      */
+        $(document).ready(function(){
+            // #output 찾기
+            var $output = $("#output");
+            // .menu 찾기
+            var $menu = $("ul.menu");
+            // 카운트 변수 추가
+            var count=0;
+
+            // #add 버튼에 클릭 이벤트 등록
+            $("#add").click(function(){
+                // 카운트 증가
+                count++;
+                // 신규 메뉴 항목 생성
+                var $newItem = $("<li>new"+count+"</li>");
+
+                // 메뉴 항목 추가
+                $menu.append($newItem);
+            })
+        });
+    </script>
+
+
+   
+
+</head>
+
+<body>
+    <div>
+        <button id="add">추가</button>
+    </div>
+    <ul class="menu">
+        <li>menu1</li>
+        <li>menu2</li>
+        <li>menu3</li>
+        <li>menu4</li>
+    </ul>
+    <p>추가/삭제 정보가 출력되는 영역</p>
+    <div id="output">
+
+    </div>
+</body>
+</html>

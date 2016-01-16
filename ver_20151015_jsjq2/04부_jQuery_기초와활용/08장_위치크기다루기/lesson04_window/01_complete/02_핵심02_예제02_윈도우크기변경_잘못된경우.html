@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title> </title>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+        }
+        
+      
+        
+        #info{          
+            border:10px solid #ff0000;          
+         
+        }
+    </style>
+       
+    <script  type="text/javascript" src="../../libs/jquery-1.11.0.min.js"></script>
+    <script>
+        /*
+         예제: 윈도우 크기 변경이 잘못된 경우
+         */
+        $(document).ready(function(){
+            // 현재 윈도우 크기를 300,300으로 변경
+           window.resize(300,300);
+        })
+    </script>
+
+</head>
+
+<body>
+    <button id="create">생성</button>
+    <button id="resize">크기변경</button>
+    
+    <div id="info">
+        크기변경 버튼을 누르면 크기가 랜덤하게 변경될꺼에요.   
+    </div>
+</body>
+
+</html>

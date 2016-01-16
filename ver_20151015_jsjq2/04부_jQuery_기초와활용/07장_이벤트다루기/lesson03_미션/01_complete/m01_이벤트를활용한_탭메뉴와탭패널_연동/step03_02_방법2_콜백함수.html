@@ -1,0 +1,193 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title> </title>
+
+<style>
+    .tab-menu {
+    	list-style: none;
+    	height:80px;
+    }
+    
+    .tab-menu li {
+        width:99px;
+        height:40px;
+        background-position-y:0;
+        text-indent: -1000px;
+        overflow: hidden;
+        display: inline-block;
+        float:left;
+    }
+    .tab-menu li:hover {
+    	background-position-y: -40px;
+    }
+    .tab-menu li.select {
+    	background-position-y: -80px;
+    	height:80px;
+    }
+    .tab-menu li.menuitem1 {
+    	background-image: url(./images/newbtn.bar.1.png);	
+    }
+    .tab-menu li.menuitem2 {
+    	background-image: url(./images/newbtn.bar.2.png);	
+    }
+    .tab-menu li.menuitem3 {
+    	background-image: url(./images/newbtn.bar.3.png);	
+    }
+    .tab-menu li.menuitem4 {
+    	background-image: url(./images/newbtn.bar.4.png);	
+    }
+    .tab-menu li.menuitem5 {
+    	background-image: url(./images/newbtn.bar.6.png);	
+    }
+    
+    .tab-contents {
+        position:relative;
+        left:10px;
+        top:10px;
+        width:780px;
+        height:340px;
+        overflow:hidden;
+        background:url(./images/content_bg.png) no-repeat;
+    }
+    
+    .tab-contents .content{
+        position: absolute;
+        left:10px;
+        top:10px;
+        display:none;
+    }
+    
+    .tab-contents .content.select{
+        display:block;
+    }
+</style>
+ 
+<script src="../../../libs/jquery-1.11.0.min.js"></script>
+
+<script>
+
+    /*
+     * step #03-02
+     *      - 방법2 : 콜박함수를 활용하는 방법
+     *  
+     * step #03-01
+     *      - 방법1 : 탭메뉴에서 탭패널을 직접 접근하는 방법
+     * step #02
+     *      - 탭패널 구현하기 
+     * 
+     * step #01
+     *      - 탭메뉴 구현하기
+     * 
+     */
+    var tabPanel1 = null;
+    $(document).ready(function(){       
+        // 탭메뉴 코드가 동작할 수 있도록 tabMenu() 함수 호출 
+        tabMenu("#tabMenu1",function(index){
+          tabPanel1.setSelectPanel(index);  
+        });        
+        
+        // 탭패널 기능 호출
+        tabPanel1 = tabPanel(".tab-contents");
+        
+    });
+    
+    // 탭메뉴 기능 구현하기
+   
+    function tabMenu(selector, callback){
+    
+        var $tabMenu = null;    
+        var $menuItems = null;
+        // 선택 한 탭메뉴를 저장할 변수
+        var $selectMenuItem =null;
+            
+        // 요소 초기화, tabMenu() 함수 내부에서 사용할 공통 데이터는 모두 이곳에 작성해주세요.
+        function init(){
+            $tabMenu = $(selector);        
+            $menuItems =$tabMenu.find("li");                
+        }
+        
+        // 이벤트 등록은 모두 이곳에 작성해주세요.
+        function initEvent(){
+            $menuItems.click(function(){
+                setSelectItem($(this));
+            });
+        }
+    
+        // 선택 메뉴 아이템 만들기     
+        function setSelectItem($item){
+            if($selectMenuItem){
+                $selectMenuItem.removeClass("select");
+            }    
+            $selectMenuItem = $item;
+            $selectMenuItem.addClass("select");            
+            
+            // 콜백함수가 있는 경우 콜백함수 실행 
+            if(callback)
+                callback($item.index());            
+        }
+        
+        init();
+        initEvent();    
+    }
+    
+    
+    // 탭패널 기능 구현하기
+    function tabPanel(selector){
+        var $tabPanels = null;
+        var $selectPanel = null;
+        function init(selector){
+            $tabPanels = $(selector).find(".content");        
+        }
+        
+        function setSelectPanel(index){
+            if($selectPanel){
+                $selectPanel.removeClass("select");
+            }   
+            $selectPanel = $tabPanels.eq(index);
+            $selectPanel.addClass("select");
+        }
+        
+        init(selector);
+        
+        // 선택기능 리턴
+        return {
+            setSelectPanel:setSelectPanel
+        }
+    }
+
+</script>
+
+
+</head>
+	
+<body>
+    <ul class="tab-menu" id="tabMenu1">
+        <li class="menuitem1">google</li>
+        <li class="menuitem2">facebook</li>
+        <li class="menuitem3">pinterest</li>
+        <li class="menuitem4">twitter</li>
+        <li class="menuitem5">path</li>
+    </ul>
+    		
+    <div class="tab-contents">
+         <div class="content">
+            <img src="images/content_facebook.png">
+        </div>
+        <div class="content">
+            <img src="images/content_google.png">
+        </div>     
+        <div class="content">
+            <img src="images/content_pinterest.png">
+        </div>
+        <div class="content">
+            <img src="images/content_twitter.png">
+        </div>
+        <div class="content">
+            <img src="images/content_path.png">
+        </div>
+    </div>
+</body>
+
+</html>

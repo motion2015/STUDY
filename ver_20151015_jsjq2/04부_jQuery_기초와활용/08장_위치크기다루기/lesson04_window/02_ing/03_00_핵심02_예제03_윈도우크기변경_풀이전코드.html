@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title> </title>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+        }
+        
+      
+        
+        #info{          
+            border:10px solid #ff0000;          
+         
+        }
+    </style>
+       
+    <script  type="text/javascript" src="../../libs/jquery-1.11.0.min.js"></script>
+    <script>
+        /*
+         예제03: 실행화면처럼 크기변경(#resize) 버튼을 누르면 새롭게 만든 윈도우 크기가 다음과 같이 랜덤하게 되게끔 만들어 주세요.
+         너비영역: 200에서 600
+         높이영역: 200에서 500
+         */
+        $(document).ready(function(){
+            // newWindow변수 선언
+            var newWindow =null;
+            // #create에 클릭 이벤트 등록
+            $("#create").click(function(){
+                // open()메서드를 활용해 새로운 윈도우 생성
+                newWindow = window.open("", "newWindow", "width=200, height=200");
+            });
+
+            // 여기에 코드를 입력해주세요.
+
+        })
+    </script>
+
+</head>
+
+<body>
+    <button id="create">생성</button>
+    <button id="resize">크기변경</button>
+    
+    <div id="info">
+        크기변경 버튼을 누르면 크기가 랜덤하게 변경될꺼에요.   
+    </div>
+</body>
+
+</html>

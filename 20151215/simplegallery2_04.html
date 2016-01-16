@@ -1,0 +1,105 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title> </title>
+
+    <style>
+        div.image-container{
+            position: relative;
+            border:1px solid #000;
+            height:340px;
+        }
+
+        div.image-container img{
+            position: absolute;
+            left:0;
+            top:0;
+            width:120px;
+        }
+    </style>
+
+
+    <script type="text/javascript"  src="libs/jquery-1.11.0.min.js"> </script>
+    <script>
+
+    $(document).ready(function(){
+      //  imageGallery.gallery($("#container1 img"),3,150,100);
+      //  imageGallery.gallery($("#container2 img"),3,150,100);
+        var g = new Gallery();
+        g.init("#container1",3,150,100).show();
+       // g.show();
+        g.init("#container2",4,140,80).show();
+      //  g.show();
+    })
+
+    function Gallery(){
+        this.s = "#container1";
+        this.c = 3;
+        this.xw = 200;
+        this.yw = 200;
+    };
+
+    Gallery.prototype.init = function(s,c,xw,yw){
+        this.s= s;
+        this.c= c;
+        this.xw= xw;
+        this.yw= yw;
+        return this;          
+    }
+
+    Gallery.prototype.show = function(){
+        var $images = $(this.s + ' img');
+
+        console.log($images);
+        var length = $images.length;
+
+        for(var i=0;i<length;i++){
+            // n번째 이미지 구하기
+            var $img = $images.eq(i);
+            // 위치 값 구하기
+            var l = 20+((i%this.c)*this.xw);
+            var t = 30+(parseInt(i/this.c)*this.yw);
+            // 위치 설정
+           // $img.css({
+            $img.animate({
+                left:l,
+                top:t
+            },2000);
+        }
+                    
+    }
+
+    
+    </script>
+</head>
+    
+<body>
+    
+    <p>container1</p>
+    <div class="image-container" id="container1">
+       
+        <img src="banners/1.png" >
+        <img src="banners/2.png" >
+        <img src="banners/3.png" >
+        <img src="banners/4.png" >
+        <img src="banners/5.png" >
+        <img src="banners/6.png" >
+        <img src="banners/7.png" >
+        <img src="banners/8.png" >   
+    </div>
+     <p>container2</p>
+     <div class="image-container" id="container2">
+         
+        <img src="banners/1.png" >
+        <img src="banners/2.png" >
+        <img src="banners/3.png" >
+        <img src="banners/4.png" >
+        <img src="banners/5.png" >
+        <img src="banners/6.png" >
+        <img src="banners/7.png" >
+        <img src="banners/8.png" >   
+    </div>
+</body>
+</html>

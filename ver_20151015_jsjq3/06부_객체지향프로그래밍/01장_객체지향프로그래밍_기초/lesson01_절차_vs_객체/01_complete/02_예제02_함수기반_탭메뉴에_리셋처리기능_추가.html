@@ -1,0 +1,124 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title></title>
+
+	<style>
+		.tab-menu {
+			list-style: none;
+			height:80px;
+		}
+		.tab-menu li {
+			width:99px;
+			height:40px;
+			background-position-y:0;
+			text-indent: -1000px;
+			overflow: hidden;
+			display: inline-block;
+			float:left;
+		}
+		.tab-menu li:hover {
+			background-position-y: -40px;
+		}
+		.tab-menu li.select {
+			background-position-y: -80px;
+			height:80px;
+		}
+		.tab-menu li.menuitem1 {
+			background-image: url(images/newbtn.bar.1.png);
+		}
+		.tab-menu li.menuitem2 {
+			background-image: url(images/newbtn.bar.2.png);
+		}
+		.tab-menu li.menuitem3 {
+			background-image: url(images/newbtn.bar.3.png);
+		}
+		.tab-menu li.menuitem4 {
+			background-image: url(images/newbtn.bar.4.png);
+		}
+		.tab-menu li.menuitem5 {
+			background-image: url(images/newbtn.bar.5.png);
+		}
+		.tab-menu li.menuitem6 {
+			background-image: url(images/newbtn.bar.6.png);
+		}
+
+	</style>
+	 
+    <script src="../../libs/jquery-1.11.0.min.js"></script>
+	<script>
+
+		/*
+		 예제 02: 함수기반 탭메뉴에 리셋 처리 기능 추가
+
+		 */
+		var $tab1MenuItems =null;
+		var $tab2MenuItems = null;
+
+		$(document).ready(function(){
+			// 탭메뉴 데이터 생성
+			$tab1MenuItems = $("#tabMenu1 li");
+			$tab2MenuItems = $("#tabMenu2 li");
+
+			// 탭메뉴 생성
+			tabMenu($tab1MenuItems);
+			tabMenu($tab2MenuItems);
+
+			// 탭메뉴 선택 초기화
+			$("#btnReset").click(function(){
+				resetTabMenu($tab1MenuItems);
+				resetTabMenu($tab2MenuItems);
+			})
+
+
+		});
+
+		// 탭메뉴 생성
+		function tabMenu($menuItems){
+			$menuItems.click(function(){
+				selectMenuItemAt($menuItems,$(this).index())
+			})
+		}
+
+		// n번째 탭메뉴 선택
+		function selectMenuItemAt($menuItems, index){
+			$menuItems.removeClass("select");
+			$menuItems.eq(index).addClass("select");
+		}
+
+
+		// 탭메뉴 선택 초기화
+		function resetTabMenu($menuItems){
+			$menuItems.removeClass("select");
+		}
+
+
+
+	</script>
+</head>
+	
+	<body>
+	<button id="btnReset">초기화</button>
+		<p>첫 번째 탭메뉴</p>
+		<ul class="tab-menu" id="tabMenu1">
+			<li class="menuitem1">google</li>
+			<li class="menuitem2">facebook</li>
+			<li class="menuitem3">pinterest</li>
+			<li class="menuitem4">twitter</li>
+			<li class="menuitem5">airbnb</li>
+			<li class="menuitem6">path</li>
+		</ul>
+		<p>두 번째 탭메뉴</p>
+		<ul class="tab-menu" id="tabMenu2">
+			<li class="menuitem1">google</li>
+			<li class="menuitem2">facebook</li>
+			<li class="menuitem3">pinterest</li>
+			<li class="menuitem4">twitter</li>
+			<li class="menuitem5">airbnb</li>
+			<li class="menuitem6">path</li>
+		</ul>
+
+
+	</body>
+</html>

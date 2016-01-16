@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title> </title>
+    <style>
+        body{
+            font-size:9pt;
+            font-family:"굴림";       
+        }
+        div, p, ul, li{
+            border:1px #eeeeee solid;
+            margin:10px;
+        }
+        ul {
+         padding:10px;
+        }
+        li.select {
+            background-color:#ccc;
+        }
+    </style>
+    
+    <script type="text/javascript"  src="../../libs/jquery-1.11.0.min.js"> </script>
+    <script>
+        /*
+         예제 03: 버튼을 클릭하면 실행화면처럼 메뉴 아이템을 10개 추가해 주세요.
+
+         */
+        $(document).ready(function(){
+
+            $("#add").click(function(){
+                for(var i=1;i<=10;i++){
+                    // 추가할 노드를 문자열로 만든 후
+                    var data="<li>menu"+i+'</li>';
+
+                    // 노드 내용에 적용
+                    $("ul.menu").append(data);
+                }
+            })
+        });
+
+
+
+    </script>
+</head>
+    
+<body>
+    <button id="add">추가</button>
+    <ul class="menu">
+        
+    </ul>        
+</body>
+
+</html>

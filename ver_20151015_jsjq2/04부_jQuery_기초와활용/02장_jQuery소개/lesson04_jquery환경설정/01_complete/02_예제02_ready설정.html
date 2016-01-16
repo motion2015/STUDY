@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>jQuery 사용 준비!</title>
+        <style>
+            body {
+                font-size: 9pt;
+                font-family: "굴림";
+            }
+        </style>
+
+        <!-- 구글 CDN 사용
+        <script type="text/javascript" src=" http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" ></script> -->
+        <script src="../../libs/jquery-1.11.0.min.js"></script>
+        <script>
+
+            /*
+             예제 02: ready() 메서드 사용법 4가지
+             jQuery에서 ready()를 이용해서 진입점을 설정하는 방법은 다음과 같이 4가지 방법이 있습니다.
+            */
+
+
+            // 방법1
+            jQuery(document).ready(function(){
+                alert("안녕하세요. jQuery에 온 걸 환영합니다.");
+            });
+
+            // 방법2
+            // 방법1을 간소화
+            jQuery(function(){
+                alert("안녕하세요. jQuery에 온 걸 환영합니다.");
+            });
+
+            // 방법3
+            // 방법1에서 jQuery함수 대신 $함수로 변경
+            $(document).ready(function(){
+                alert("안녕하세요. jQuery에 온 걸 환영합니다.");
+            });
+
+            // 방법4
+            // 방법3을 간소화
+            $(function(){
+                alert("안녕하세요. jQuery에 온 걸 환영합니다.");
+            });
+            
+        </script>
+    </head>
+
+    <body>
+        <div>
+            jQuery를 사용할 준비가 됐나요?
+        </div>
+    </body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+    <head>
+        <title></title>
+        <script src="../../libs/jquery-1.11.0.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                // 메뉴 항목 추가1
+                $("#menu").append("<li>newmenu1</li>");
+
+                // 메뉴 항목 추가2
+                $("#menu").append("<li>newmenu2</li>");
+
+                // 메뉴에 border 속성 설정
+                $("#menu").css("border", "1px solid #f00");
+
+            })
+        </script>
+    </head>
+    <body>
+         <ul id="menu">
+            <li>
+                menu
+            </li>
+        </ul>
+    </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Title of the document</title>
+<script type="text/javascript" src="js/DateUtil.js"></script>
+<script>
+
+function calculator(o, n1 ,n2){
+	var sum = 0  ;
+
+	switch (o){
+      case "+":
+      sum = n1 + n2;
+      break;
+      case "-":
+      sum = n1 - n2;
+      break;
+      case "*":
+      sum = n1 * n2;
+      break;
+      case "/":
+      sum = n1 / n2;
+      break;
+   }
+
+	return  sum;
+
+
+	var sum2 = eval(a+b+c);
+	function test(){
+		alert("test");
+	}
+
+	eval("test()");
+	
+
+}
+
+calculator();
+
+document.write("1 결과 = " +calculator("+" , 20, 10), "<br>");
+document.write("2 결과 = " +calculator("-" , 20, 10), "<br>");
+document.write("3 결과 = " +calculator("*" , 20, 10), "<br>");
+document.write("4 결과 = " +calculator("/" , 20, 10), "<br>");
+document.write("4 결과 = " +calculator("%" , 20, 10), "<br>");
+
+</script>
+</head>
+
+<body>
+Content of the document......
+</body>
+
+</html>

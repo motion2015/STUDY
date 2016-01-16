@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title> </title>
+    <style>
+        body{
+            font-size:9pt;
+            font-family:"굴림";       
+        }
+        
+        ul.menu {
+         padding:10px;
+         list-style:none;
+         border:1px #000 solid;
+        }
+        ul.menu li {
+             border:1px #eeeeee solid;
+            margin:10px;
+            
+        }
+        
+         ul.menu li.select {
+            background-color:#ccc;
+            color:#f00;
+            font-size:20px;
+        }
+         ul.menu li.border {
+            border:4px solid #f00;
+        }
+    </style>
+    
+    <script type="text/javascript"  src="../../libs/jquery-1.11.0.min.js"></script>
+    <script>
+        /*
+        예제07 : 클릭한 메뉴 항목에 “select” 선택자와 “border” 선택자를 추가해주세요.
+
+         */
+        $(document).ready(function(){
+            // 메뉴 아이템에 클릭 이벤트 리스너 등록
+            $("ul.menu li").click(function(){
+                // 선택한 메뉴 아이템에 select,border 선택자 추가
+                $(this).addClass("select border");
+            })
+        });
+    </script>
+</head>
+    
+<body>
+    <ul class="menu">
+       <li>menu1</li>
+       <li>menu2</li>
+       <li class="select">menu3</li>
+       <li>menu4</li>
+       <li>menu5</li>
+    </ul>        
+</body>
+
+</html>
