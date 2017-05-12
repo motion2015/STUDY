@@ -1,0 +1,14 @@
+<textarea defaultValue="hello\nworld" onChange={log} />
+<textarea defaultValue={"hello\nworld"} onChange={log} />
+<textarea defaultValue={"hello\nworld"} onChange={log}>hello
+world</textarea>
+<textarea defaultValue={"hello\nworld"} onChange={log}>{"hello\n\
+world"}</textarea>
+<br/>
+
+<select defaultValue="trouble">
+
+    <option value="stay">Should I satay</option>
+    <option value="move" >or should I go</option>
+    <option value="trouble" >If I stay it will be trouble</option>
+</select>
