@@ -1,5 +1,14 @@
 시작하세요!  프로그래밍
 http://localhost/react/03_01_table.html
+http://localhost/react/whinepad/discover.html
+
+command ::
+
+babel --presets react,es2015 js\source\ -d js\build
+browserify js\build\app.js -o bundle.js
+
+browserify js\build\discover.js -o discover-bundle.js
+type css\components\* css\* > bundle.css
 
 
 https://www.joinc.co.kr/w/Site/Vim/Documents/UsedVim
@@ -16,3 +25,7 @@ https://dev.w3.org/html5/html-author/charref
  http://rhammer.tistory.com/40
  LocalStroage로 로그인값 유지시키기
  
+
+babel --presets react,es2015 js\source\ -d js\build
+browserify js\build\app.js -o bundle.js
+type css\components\* css\* > bundle.css
